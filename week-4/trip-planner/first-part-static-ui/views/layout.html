@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Trip Planner - {% block title %}{% endblock %}</title>
+    <meta name="description" content="Plan the perfect trip." />
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/flat-ui/dist/css/flat-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="/stylesheets/trip-planner.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row demo-row">
+        <div class="col-xs-12">
+            <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <i class="fa fa-plane"></i><a class="navbar-brand" href="#">Trip Planner</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#fakelink"><i class="fa fa-home"></i>Home</a></li> <!-- class="active" -->
+                        <li><a href="#fakelink"><i class="fa fa-info"></i> About</a></li>
+                        <li><a href="#fakelink"><i class="fa fa-comments-o"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">Made with <i class="fa fa-heart"></i> by <a href="http://github.com/celanajaya" target="_blank">Peter Steele</a> & <a href="http://fvcproductions.com" target="_blank">FVCproductions</a> at Fullstack Academy.</p>
+        </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<!--     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="/bower_components/flat-ui/dist/js/flat-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWivWKvLCeC1UyZcGVwSeoS35RK3fVWck&sensor=true"></script>
+    <script src="/javascripts/load-map.js"></script>
+</body>
+
+</html>

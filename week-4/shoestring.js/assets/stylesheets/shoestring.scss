@@ -1,0 +1,209 @@
+@import "normalize";
+@import "modern-business";
+
+div {
+  display: block;
+}
+
+body {
+ h1{
+   color: black;
+ }
+ h2{
+   text-align: center;
+ }
+ h3{
+   padding-left: 50px
+ }
+}
+
+small{
+ background-color: white;
+ color: #929599 ;
+ text-decoration: none;
+ font-weight: normal;
+}
+
+
+$nav-gray: #bbb;
+$nav-height: 50px;
+
+.fa{
+ transform: none;
+}
+
+*{
+ box-sizing: border-box;
+}
+
+.navbar{
+
+ background: $nav-gray;
+ height: $nav-height;
+
+ a {
+   color: invert($nav-gray);
+   text-decoration: none;
+   &:hover {
+     text-decoration: underline;
+    }
+ }
+
+
+ .navbar-header{
+   margin-top: 16px;
+   float: left;
+ }
+ .navbar-brand{
+   font-weight: bold;
+ }
+
+ ul.navbar-nav{
+   list-style-type: none;
+ }
+ .navbar-right{
+   margin-top: 16px;
+   float: right;
+ }
+
+ /*//navbar and navbar inverse (NOT descendant)*/
+
+ &.navbar-inverse{
+   background: invert($nav-gray);
+   a{
+     color: $nav-gray;
+   }
+ }
+
+ &.navbar-fixed-top{
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+ }
+
+ .container{
+ padding: 0.5%;
+ }
+}
+
+.text-center{
+ text-align: center;
+}
+
+
+.section.lead{
+ padding-top: 0;
+ padding-bottom: 0;
+}
+
+@mixin clearfix(){
+ &::before, &::after{
+   content: '';
+   display: block;
+   clear: both;
+ }
+}
+
+.row{
+/*  overflow: hidden;*/
+ @include clearfix();
+}
+
+@for $n from 1 through 12 {
+ .col-lg-#{$n} {
+   float: left;
+   padding: 0 2%;
+   width: percentage($n/12);
+ }
+}
+
+.col-lg-12{
+
+}
+
+.col-lg-4{
+ width: 33%;
+ float: left;
+ padding: 0 10px;
+}
+
+.col-lg-6{
+ width: 50%;
+ display: inline-block;
+ padding: 0 10px;
+ float: left;
+}
+
+.img-responsive{
+ width: 100%;
+ margin-bottom: 10px;
+}
+
+#footer{
+/* padding: 0px 0px 100px 20px;*/
+ margin: 0px;
+ font-size: 20px;
+ float: left;
+}
+
+.tooltip-social{
+ display: inline-block;
+}
+
+.breadcrumb{
+ padding: 8px 15px;
+ margin-bottom: 20px;
+ list-style: none;
+ background-color: #f5f5f5 ;
+ border-radius: 4px;
+
+}
+
+#contactContainer{
+ width: 90%;
+}
+
+.form-group{
+ display: inline-block;
+}
+
+#input4 {
+ width: 98%;
+}
+
+textarea {
+ padding: 100px;
+ margin-top: 100px;
+ vertical-align: center;
+}
+
+.button{
+ margin: 100px;
+ display: block;
+}
+
+.breadcrumb>li{
+    display: inline-block;
+
+}
+.breadcrumb>li{
+ color: #929599 ;
+}
+
+#rightCol {
+ float:right;
+ position: relative;
+ min-height: 1px;
+ padding-right: 15px;
+ padding-left: 15px;
+}
+
+.col-sm-8 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@import "media-queries";

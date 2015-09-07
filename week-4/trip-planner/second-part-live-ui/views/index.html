@@ -1,0 +1,99 @@
+{% extends 'layout.html' %} {% block content %}
+<div class='col-lg-9 col-md-8 col-sm-12 col-xs-12' id="mapContainer">
+    <div id="googleMap">
+    </div>
+</div>
+<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+    <div class='form-group selectionMenu'>
+        <label for='hotels'>Hotels</label>
+        <div class="row">
+            <div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+                <select class='form-control' id="hotelName">
+                    {% for hotel in hotels %}
+                    <option value="{{hotel.name}}">{{hotel.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class='btn addHotel'>+</button>
+        </div>
+        <label for='restaurants'>Restaurants</label>        
+        <div class="row">
+            <div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+                <select class='form-control' id='restaurantName'>
+                    {% for restaurant in restaurants %}
+                    <option value="{{restaurant.name}}" >{{restaurant.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class='btn addRestaurant'>+</button>
+        </div>
+        <label for='thingsToDo'>Things to Do</label>
+        <div class="row">
+            <div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+                <select class='form-control' id="thingName">
+                    {% for thing in thingsToDo %}
+                    <option value="{{thing.name}}">{{thing.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class='btn addThing'>+</button>
+        </div>
+    </div>
+</div>
+
+
+<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+    <div class='dayHolder'>
+        <ul class="nav nav-pills">
+            <li role="presentation" id="addDay"><a href="#">+</a></li>
+            <li role="presentation" id="removeDay"><a href="#">-</a></li>
+            <li role="presentation"><a href="#" class='activeDay'>1</a></li>
+            <li role="presentation"><a href="#">2</a></li>
+            <li role="presentation"><a href="#">3</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12' id="dailyActivities">
+	<div class='activitiesHolder'>
+		<h3 class='activtiesLead'>My Hotel</h3>
+		<ul>
+            <div class="row" id='hotelRow'>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id='pickedHotel'>
+                </div>
+            </div>
+        </ul>
+        <h3>My Restaurants</h3>
+        <ul>
+            <div class="row" id='restaurantRow'>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id='pickedRestaurant'>
+              </div>
+          </div>
+      </ul>
+      <h3>My Things to Do</h3>
+      <ul>
+        <div class="row" id='thingRow'>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id='pickedThing'>
+          </div>
+      </div>
+  </div>
+  
+</ul>
+</div>
+</div>
+<script>
+{% autoescape false %}
+  var all_hotels = {{ hotels | json }};
+  var all_restaurants = {{ restaurants | json }};
+  var all_things_to_do = {{ thingsToDo | json }};
+{% endautoescape %}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+

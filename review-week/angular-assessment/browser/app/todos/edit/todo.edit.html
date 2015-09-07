@@ -1,0 +1,13 @@
+<div class="todo-single">
+	<h2>{{ todo.title }} <small>(edit)</small>
+		<div class="btn-group"> 
+			<a ng-click="keepChanges()" class="btn btn-success">
+				<span class="glyphicon glyphicon-ok"></span>
+			</a>
+			<a ui-sref="todos.detail({id: todo._id})" class="btn btn-danger">
+				<span class="glyphicon glyphicon-remove"></span>
+			</a>
+		</div>
+	</h2>
+	<textarea class="full-width" rows="15" ng-model="todo.description"></textarea>
+</div>

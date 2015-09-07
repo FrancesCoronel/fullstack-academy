@@ -1,0 +1,263 @@
+// importing necessary SASS files
+
+@import "modern-business";
+@import "normalize";
+
+// defining navbar variables
+
+$navbar-height: 50px;
+$navbar-padding: 15px;
+$navbar-font: normal 17px arial, sans-serif;
+$navbar-font-color: #333;
+$navbar-background: #EEE;
+$navbar-menu-color: #CCC;
+
+* {
+  box-sizing: border-box;
+}
+
+.div {
+  display: block;
+}
+
+.row {
+  margin: 0;
+  :after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+h1 small {
+  color: $navbar-menu-color; // #929599
+  font-weight: normal;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.container {
+  max-width: 100%;
+  width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  :after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.body {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: #95B8DD;
+  text-decoration: none;
+}
+
+.img {
+  vertical-align: middle;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-portfolio {
+  margin-bottom: 30px;
+}
+
+.section {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding: 0px;
+}
+
+.section-colored {
+  padding: 0px;
+  background-color: white;
+}
+
+.navbar {
+  height: $navbar-height;
+  color: $navbar-font-color;
+  font: $navbar-font;
+  background: $navbar-background;
+
+  a {
+    color: $navbar-menu-color;
+  }
+
+  a:hover {
+    color: $navbar-background;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.navbar-inverse {
+  color: invert($navbar-font-color);
+  background: invert($navbar-background);
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-header {
+  float: left;
+  padding: 14px;
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+}
+
+.nav {
+  float: left;
+  padding: 0;
+}
+
+.navbar-nav {
+  margin: 0;
+  li {
+    display: inline-block;
+    padding: $navbar-padding;
+    &:hover {
+      background: $navbar-menu-color;
+      a {
+        color: #000;
+      }
+    }
+  }
+}
+
+.navbar-right {
+  float: right;
+}
+
+@function columns($columns) {
+  @return floor(percentage($columns/12));
+}
+
+.col-lg-4 {
+  width: columns(4);
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding: 50px;
+}
+
+.col-lg-6 {
+  width: columns(6);
+  position: relative;
+  min-height: 1px;
+  padding-right: 50px;
+  float: left;
+}
+
+.col-lg-12 {
+  width: columns(12);
+  float: left;
+  padding: 0 1.5%;
+}
+
+.col-md-8 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-sm-4 {
+  float:right;
+}
+
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.breadcrumb>li {
+  display: inline-block;
+}
+
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+li {
+  text-align: -webkit-match-parent;
+}
+
+.active {
+  color: $navbar-menu-color;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul {
+    margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tooltip-social {
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.col-sm-4 {
+  float: left;
+  width: columns(4);
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}

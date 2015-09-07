@@ -1,0 +1,141 @@
+
+$tealAccent: #00B2B2;
+$darkGrey: #333;
+$backgroundGrey: #707070;
+$blueGrey: #435E5E;
+$lightTeal: #A3FFFF;
+
+body {
+	background-color: $backgroundGrey;
+	font-family: 'verdana';
+}
+.navbar {
+	border-radius: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-color: $tealAccent;
+}
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+    color: $tealAccent;
+}
+.navbar-inverse .navbar-nav .active > a{
+	color: $tealAccent;
+}
+#mapContainer {
+	padding: 0;
+}
+#googleMap {
+	margin-top: -20px;
+	width: 100%;
+	height: calc(100vh - 50px);
+}
+.selectionMenu {
+	background-color: $darkGrey;
+	padding: 15px;
+	border-radius: 15px;
+	border: 2px solid $tealAccent;
+	label {
+		color: $tealAccent;
+		padding-top: 5px;
+	}
+	select {
+		background-color: $blueGrey;
+		color: black;
+	}
+	button {
+		background-color: $darkGrey;
+		border: $tealAccent solid 2px;
+		color: $tealAccent;
+	}
+	button:hover {
+		box-shadow: $lightTeal 0px 0px 1px 1px;
+		color: $tealAccent;
+	}
+}
+.dayHolder {
+	padding: 10px;
+	background-color: $blueGrey;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border: 2px solid $tealAccent;
+	.nav.nav-pills li a {
+		background-color: $darkGrey;
+		margin-left: 1px;
+		margin-right: 1px;
+		padding: 10px;
+		/*border-radius: 15px;*/
+		border: 2px solid $tealAccent;
+		color: $tealAccent;
+		&:hover {
+			box-shadow: $lightTeal 0px 0px 1px 1px;
+		}
+	}
+}
+.activitiesHolder{
+	background-color: $darkGrey;
+	border: 2px solid $tealAccent;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-top: none;
+	padding-left: 10px;
+	color: black;
+	ul {
+		list-style-type: none;
+		padding-left: 5px;
+	}
+	.activtiesLead {
+		margin-top: 0px;
+		padding-top: 15px;
+	}
+	button {
+		float: right;
+		margin-right:  -30px;
+		border-radius: 15px;
+		background-color: $darkGrey;
+		border-color: $tealAccent;
+		color: $tealAccent;
+		&:hover {
+			box-shadow: $lightTeal 0px 0px 1px 1px;
+			color: $tealAccent;
+		}
+	}
+	a {
+		font-size: 18px;
+	}
+	h3 {
+		color: $tealAccent;
+	}
+}
+
+.activeDay {
+	margin: 0px;
+	box-shadow: $lightTeal 0px 0px 1px 1px;
+	color: $tealAccent;
+}
+
+@media (max-width: 992px) {
+	#mapContainer {
+		margin-bottom: 15px;
+	}
+	#googleMap {
+		height: 50vh;
+	}
+}
+
+@media (max-width: 768px) {
+	#mapContainer {
+		margin-bottom: 15px;
+	}
+	#googleMap {
+		height: 50vh;
+	}
+}
+
+
+
+
+
+
+
+

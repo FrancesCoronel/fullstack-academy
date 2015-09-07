@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>recursion.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>recursion.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>factorial iterative</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorialIterative</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-keyword">var</span> total = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) {
+    total = total * i;
+  }
+  <span class="hljs-keyword">return</span> total;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>factorial recursive</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorial</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> n * factorial(n - <span class="hljs-number">1</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>fib example</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-keyword">if</span>(n === <span class="hljs-number">0</span> || n ===<span class="hljs-number">1</span>) { <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; }
+  <span class="hljs-keyword">return</span> fib(n-<span class="hljs-number">1</span>) + fib(n-<span class="hljs-number">2</span>);
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">type</span><span class="hljs-params">(obj)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.prototype.toString.call(obj).match(<span class="hljs-regexp">/.* (.*)\]/</span>)[<span class="hljs-number">1</span>];
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>stringify Object tree</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringify</span><span class="hljs-params">(obj)</span> </span>{
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Function"</span>) {
+    <span class="hljs-keyword">return</span> obj + <span class="hljs-string">''</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Undefined"</span>) {
+    <span class="hljs-keyword">return</span> obj + <span class="hljs-string">''</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Null"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"null"</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Boolean"</span>) {
+    <span class="hljs-keyword">return</span> obj + <span class="hljs-string">''</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Number"</span>) {
+    <span class="hljs-keyword">return</span> obj + <span class="hljs-string">''</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"String"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'"'</span> + obj + <span class="hljs-string">'"'</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Array"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'['</span> +
+    obj.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(o)</span> </span>{
+      <span class="hljs-keyword">return</span> stringify(o);
+    }).join(<span class="hljs-string">","</span>) + <span class="hljs-string">']'</span>;
+  }
+  <span class="hljs-keyword">if</span> (type(obj) === <span class="hljs-string">"Object"</span>) {
+    <span class="hljs-keyword">var</span> result = [];
+    <span class="hljs-built_in">Object</span>.keys(obj).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key)</span> </span>{
+      <span class="hljs-keyword">var</span> val = stringify(obj[key]);
+      <span class="hljs-keyword">if</span> (val !== <span class="hljs-literal">null</span>) {
+        result.push(<span class="hljs-string">'"'</span> + key + <span class="hljs-string">'": '</span> + val);
+      }
+    });
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"{"</span> + result.join(<span class="hljs-string">","</span>) + <span class="hljs-string">"}"</span>;
+  }
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

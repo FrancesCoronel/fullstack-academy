@@ -1,0 +1,8 @@
+<div class="todo-single">
+	<h2>{{ todo.title }} <small>(details)</small>
+		<a ui-sref="todos.edit({id: todo._id})" class="btn btn-default">
+			<span class="glyphicon glyphicon-pencil"></span>
+		</a>
+	</h2>
+	<div>{{ todo.description }}</div>
+</div>

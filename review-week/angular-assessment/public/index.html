@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Assessment</title>
+    <base href="/">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!--external CSS dependencies-->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!--local CSS dependencies-->
+    <link rel="stylesheet" href="/app/main.css" />
+
+    <!--external JS dependencies-->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!--local JS dependencies-->
+    <script src="/app/main.js"></script>
+    <script src="/utils/ng-enter.directive.js"></script>
+    <script src="/components/navbar/navbar.directive.js"></script>
+    <script src="/app/todos/todo.factory.js"></script>
+    <script src="/app/todos/list/todo.list.state.js"></script>
+    <script src="/app/todos/list/todo.list.controller.js"></script>
+    <script src="/app/todos/item/todo.item.directive.js"></script>
+    <script src="/app/todos/item/todo.item.controller.js"></script>
+    <script src="/app/todos/detail/todo.detail.state.js"></script>
+    <script src="/app/todos/detail/todo.detail.controller.js"></script>
+    <script src="/app/todos/edit/todo.edit.state.js"></script>
+    <script src="/app/todos/edit/todo.edit.controller.js"></script>
+</head>
+<body ng-app="angularAssessment">
+    <navbar></navbar>
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+</body>
+</html>

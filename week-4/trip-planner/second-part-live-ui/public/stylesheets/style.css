@@ -1,0 +1,106 @@
+body {
+  background-color: #707070;
+  font-family: 'verdana'; }
+
+.navbar {
+  border-radius: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #00B2B2; }
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+  color: #00B2B2; }
+
+.navbar-inverse .navbar-nav .active > a {
+  color: #00B2B2; }
+
+#mapContainer {
+  padding: 0; }
+
+#googleMap {
+  margin-top: -20px;
+  width: 100%;
+  height: calc(100vh - 50px); }
+
+.selectionMenu {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #00B2B2; }
+  .selectionMenu label {
+    color: #00B2B2;
+    padding-top: 5px; }
+  .selectionMenu select {
+    background-color: #435E5E;
+    color: black; }
+  .selectionMenu button {
+    background-color: #333;
+    border: #00B2B2 solid 2px;
+    color: #00B2B2; }
+  .selectionMenu button:hover {
+    box-shadow: #A3FFFF 0px 0px 1px 1px;
+    color: #00B2B2; }
+
+.dayHolder {
+  padding: 10px;
+  background-color: #435E5E;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border: 2px solid #00B2B2; }
+  .dayHolder .nav.nav-pills li a {
+    background-color: #333;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
+    /*border-radius: 15px;*/
+    border: 2px solid #00B2B2;
+    color: #00B2B2; }
+    .dayHolder .nav.nav-pills li a:hover {
+      box-shadow: #A3FFFF 0px 0px 1px 1px; }
+
+.activitiesHolder {
+  background-color: #333;
+  border: 2px solid #00B2B2;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top: none;
+  padding-left: 10px;
+  color: black; }
+  .activitiesHolder ul {
+    list-style-type: none;
+    padding-left: 5px; }
+  .activitiesHolder .activtiesLead {
+    margin-top: 0px;
+    padding-top: 15px; }
+  .activitiesHolder button {
+    float: right;
+    margin-right: -30px;
+    border-radius: 15px;
+    background-color: #333;
+    border-color: #00B2B2;
+    color: #00B2B2; }
+    .activitiesHolder button:hover {
+      box-shadow: #A3FFFF 0px 0px 1px 1px;
+      color: #00B2B2; }
+  .activitiesHolder a {
+    font-size: 18px; }
+  .activitiesHolder h3 {
+    color: #00B2B2; }
+
+.activeDay {
+  margin: 0px;
+  box-shadow: #A3FFFF 0px 0px 1px 1px;
+  color: #00B2B2; }
+
+@media (max-width: 992px) {
+  #mapContainer {
+    margin-bottom: 15px; }
+  #googleMap {
+    height: 50vh; } }
+
+@media (max-width: 768px) {
+  #mapContainer {
+    margin-bottom: 15px; }
+  #googleMap {
+    height: 50vh; } }

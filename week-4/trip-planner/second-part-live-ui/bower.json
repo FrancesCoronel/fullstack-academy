@@ -1,0 +1,17 @@
+{
+  "name": "trip-planner-static",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jsmulrow/trip-planner",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

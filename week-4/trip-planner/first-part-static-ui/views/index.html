@@ -1,0 +1,82 @@
+{% extends 'layout.html' %} {% block title %}Your Trip{% endblock %} {% block content %}
+<div class="container">
+<!--     <div class="col-xs-8">
+        <div id="map-container">
+            <div id="map-canvas"></div>
+        </div>
+    </div> -->
+    <div class="col-xs-4">
+        <div class="panel">
+            <div class="panel-body">
+                <div>
+                    <h4>Hotels</h4>
+                    <select>
+                        {% for hotel in hotels %}
+                        <option value="{{hotel.name}}">{{hotel.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <a href="#"><i class="fa fa-plus fa-1x"></i></a>
+                </div>
+                <br>
+                <div>
+                    <h4>Things To Do</h4>
+                    <select>
+                        {% for thing in things %}
+                        <option value="{{thing.name}}">{{thing.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <a href="#"><i class="fa fa-plus fa-1x"></i></a>
+                </div>
+                <br>
+                <div>
+                    <h4>Restaurants</h4>
+                    <select>
+                        {% for restaurant in restaurants %}
+                        <option value="{{restaurant.name}}">{{restaurant.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <a href="#"><i class="fa fa-plus fa-1x"></i></a>
+                </div>
+            </div>
+        </div>
+        <h3>Day 2</h3>
+        <div class="panel">
+            <div class="panel-heading">
+                <button class="btn btn-primary">1</button>
+                <button class="btn btn-primary">2</button>
+                <button class="btn btn-primary">3</button>
+                <button class="btn btn-primary">+</button>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <h4>My Hotel</h4>
+                    <ul>
+                        <li>
+                            <span>[[xxxxxxxxxxxxxxxxxx]]</span>
+                            <a href="#"><i class="fa fa-times fa-1x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>My Restaurants</h4>
+                    <ul>
+                        <li>
+                            <span>[[yyyyyyyyyyyyyyyyyy]]</span>
+                            <a href="#"><i class="fa fa-times fa-1x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>My Things To Do</h4>
+                    <ul>
+                        <li>
+                            <span>[[zzzzzzzzzzzzzzzzzzz]]</span>
+                            <a href="#"><i class="fa fa-times fa-1x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

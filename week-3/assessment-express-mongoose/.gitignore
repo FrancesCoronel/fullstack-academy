@@ -1,0 +1,7 @@
+node_modules/
+.monitor
+config/imager.js
+npm-debug.log
+Makefile
+.DS_Store
+.idea

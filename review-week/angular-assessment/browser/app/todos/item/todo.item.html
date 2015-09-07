@@ -1,0 +1,18 @@
+<div class="todo-item" ui-sref-active="active">
+	<div class="input-group">
+		<span class="input-group-addon">
+			<input ng-model="theTodo.complete" type="checkbox" />
+		</span>
+		<input ng-model="theTodo.title" type="text" class="form-control" ng-enter="toggleComplete()" />
+		<span class="input-group-btn">
+			<button class="btn btn-default" ng-click="removeTodo()">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
+		</span>
+		<span class="input-group-btn">
+			<a ui-sref="todos.detail({id: theTodo._id})" class="btn btn-default">
+				<span class="glyphicon glyphicon-arrow-right"></span>
+			</a>
+		</span>
+	</div>
+</div>

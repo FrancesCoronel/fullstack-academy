@@ -1,0 +1,56 @@
+body {
+	background-color: #f0f0f0;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.todo-container {
+	display: flex;
+}
+
+.todo-container > * {
+	min-width: -webkit-min-content;
+}
+
+.todo-list {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+.todo-single {
+	padding-left: 2em;
+	font-size: 1.5em;
+}
+
+.todo-single h2 {
+	margin-top: 0;
+}
+
+.todo-item {
+	white-space: nowrap;
+	padding: 10px;
+	position: relative;
+}
+
+.todo-item.active::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -1px;
+	right: -1px;
+	background-color: #f0f0f0;
+	border-top: 1px dashed #999;
+	border-bottom: 1px dashed #999;
+}
+
+.todo-item .input-group {
+	width: 20em;
+}
+
+.input-group-addon {
+	background-color: white;
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>LoopsSpec.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>LoopsSpec.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Loops"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Let’s repeat ourselves several times</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  describe(<span class="hljs-string">"repeat"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"is empty with 0 repeats"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(repeat(<span class="hljs-string">"yo"</span>, <span class="hljs-number">0</span>)).toEqual(<span class="hljs-string">""</span>);
+    });
+    it(<span class="hljs-string">"repeats its argument once"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(repeat(<span class="hljs-string">"yo"</span>, <span class="hljs-number">1</span>)).toEqual(<span class="hljs-string">"yo"</span>);
+    });
+    it(<span class="hljs-string">"repeats its argument twice"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(repeat(<span class="hljs-string">"yo"</span>, <span class="hljs-number">2</span>)).toEqual(<span class="hljs-string">"yoyo"</span>);
+    });
+      it(<span class="hljs-string">"repeats its argument many times"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(repeat(<span class="hljs-string">"yo"</span>, <span class="hljs-number">10</span>)).toEqual(<span class="hljs-string">"yoyoyoyoyoyoyoyoyoyo"</span>);
+    });
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Let’s iterate over all the elements of an array</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  describe(<span class="hljs-string">"sum"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"computes the sum of an empty array"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(sum([])).toEqual(<span class="hljs-number">0</span>);
+    });
+
+    it(<span class="hljs-string">"computes the sum of an array of one number"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(sum([<span class="hljs-number">7</span>])).toEqual(<span class="hljs-number">7</span>);
+    });
+
+    it(<span class="hljs-string">"computes the sum of an array of two numbers"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(sum([<span class="hljs-number">7</span>, <span class="hljs-number">11</span>])).toEqual(<span class="hljs-number">18</span>);
+    });
+
+    it(<span class="hljs-string">"computes the sum of an array of many numbers"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(sum([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>])).toEqual(<span class="hljs-number">25</span>);
+    });
+  });
+});
+
+describe(<span class="hljs-string">"Looping over nested Loops"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  it(<span class="hljs-string">"returns an empty string when input is 0"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(gridGenerator(<span class="hljs-number">0</span>)).toEqual(<span class="hljs-string">""</span>);
+  });
+  it(<span class="hljs-string">"creates a grid with 3 columns and rows when input is 3"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(gridGenerator(<span class="hljs-number">3</span>)).toEqual(<span class="hljs-string">"# #\n # \n# #\n"</span>);
+  });
+  it(<span class="hljs-string">"creates a grid with 9 columns and rows when input is 9"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(gridGenerator(<span class="hljs-number">2</span>)).toEqual(<span class="hljs-string">"# \n #\n"</span>)
+  });
+
+  it(<span class="hljs-string">"finds the largest Pythagorean Triplet and returns an array of the Triplet"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(largestTriplet(<span class="hljs-number">25</span>)).toEqual([<span class="hljs-number">7</span>,<span class="hljs-number">24</span>,<span class="hljs-number">25</span>]);
+  });
+  it(<span class="hljs-string">"finds the largest Pythagorean Triplet"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(largestTriplet(<span class="hljs-number">65</span>)).toEqual([<span class="hljs-number">16</span>,<span class="hljs-number">63</span>,<span class="hljs-number">65</span>]);
+  });
+  it(<span class="hljs-string">"finds the largets Pythagorean Triplet within 'n' (aka the number argument passed)"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    expect(largestTriplet(<span class="hljs-number">66</span>)).toEqual([<span class="hljs-number">16</span>,<span class="hljs-number">63</span>,<span class="hljs-number">65</span>]);
+  })
+});
+
+describe(<span class="hljs-string">"More looping over arrays"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>try to implement this join() function without using the built-in String#join function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  describe(<span class="hljs-string">"join"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"turns an empty array into an empty string"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(join([])).toEqual(<span class="hljs-string">""</span>);
+    });
+
+    it(<span class="hljs-string">"turns an array with one element into a string"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(join([<span class="hljs-string">'a'</span>])).toEqual(<span class="hljs-string">"a"</span>);
+    });
+
+    it(<span class="hljs-string">"turns an array with many elements into a string"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(join([<span class="hljs-string">'apple'</span>, <span class="hljs-string">'banana'</span>, <span class="hljs-string">'cherry'</span>])).toEqual(<span class="hljs-string">"applebananacherry"</span>);
+    });
+
+    it(<span class="hljs-string">"inserts a delimiter between elements"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(join([<span class="hljs-string">'apple'</span>, <span class="hljs-string">'banana'</span>, <span class="hljs-string">'cherry'</span>], <span class="hljs-string">'/'</span>)).toEqual(<span class="hljs-string">"apple/banana/cherry"</span>);
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>This test is to make sure you don’t use “for (var i in a)” on an array
+Remember how we can add any type of key/value to an array object
+since it’s just like a regular object?</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    it(<span class="hljs-string">"ignores non-indexed properties set on the array object"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">var</span> array = [<span class="hljs-string">'apple'</span>, <span class="hljs-string">'banana'</span>, <span class="hljs-string">'cherry'</span>];
+
+      array.type = <span class="hljs-string">'fruits'</span>;
+      expect(array.type).toEqual(<span class="hljs-string">'fruits'</span>);
+
+      array.first = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>[<span class="hljs-number">0</span>];
+      };
+
+      expect(array.first()).toEqual(<span class="hljs-string">'apple'</span>);
+
+      expect(join(array)).toEqual(<span class="hljs-string">"applebananacherry"</span>);
+    });
+
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Let’s practice looping over objects using the for(var i in obj) since
+Here we have to also be aware of the <code>__proto__</code> relationship</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"looping over objects"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  describe(<span class="hljs-string">"paramify"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"works on an empty object"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(paramify({})).toEqual(<span class="hljs-string">""</span>);
+    });
+
+    it(<span class="hljs-string">"converts an object with one element"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(paramify({
+        size: <span class="hljs-number">14</span>
+      })).toEqual(<span class="hljs-string">"size=14"</span>);
+    });
+
+    it(<span class="hljs-string">"converts an object with two elements"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(paramify({
+        height: <span class="hljs-number">74</span>,
+        width: <span class="hljs-number">12</span>
+      })).toEqual(<span class="hljs-string">"height=74&amp;width=12"</span>);
+    });
+
+    it(<span class="hljs-string">"converts an object with many elements"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">var</span> object = {a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span>, d: <span class="hljs-number">4</span>, e: <span class="hljs-number">5</span>, f: <span class="hljs-number">6</span> };
+      expect(paramify(object)).toEqual(<span class="hljs-string">"a=1&amp;b=2&amp;c=3&amp;d=4&amp;e=5&amp;f=6"</span>);
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>this one might be a bit tricky ;-)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    it(<span class="hljs-string">"outputs the parameters in alphabetical order"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">var</span> object = {f: <span class="hljs-number">6</span>, e: <span class="hljs-number">5</span>, d: <span class="hljs-number">4</span>, c: <span class="hljs-number">3</span>, b: <span class="hljs-number">2</span>, a: <span class="hljs-number">1</span> };
+      expect(paramify(object)).toEqual(<span class="hljs-string">"a=1&amp;b=2&amp;c=3&amp;d=4&amp;e=5&amp;f=6"</span>);
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>This one is also tricky, here we want you to only <code>paramify</code> the properties 
+of the object and avoid any that are on the object’s <strong>proto</strong> object.
+To do that, use the <code>hasOwnProperty</code> method of <code>sObject</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    it(<span class="hljs-string">"skips properties of the object's prototype"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Alphabet is a constructor function that will use the <code>new</code> method of
+object creation</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">var</span> Alphabet = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.a = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">this</span>.b = <span class="hljs-number">2</span>;
+      };
+
+      Alphabet.prototype = {
+        c: <span class="hljs-number">3</span>
+      };
+
+      <span class="hljs-keyword">var</span> alphabet = <span class="hljs-keyword">new</span> Alphabet();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>see how we’re skipping <code>c</code> ?</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      expect(paramify(alphabet)).toEqual(<span class="hljs-string">"a=1&amp;b=2"</span>);
+    });
+  });
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

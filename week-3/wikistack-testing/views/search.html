@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}wikistack - search{% endblock %}
+
+{% block content %}
+	<h3>SEARCH</h3>
+	<hr>
+	<form method="POST" action="search/submit">
+		<div class="form-group">
+			<label for="searchTitle">enter a title</label>
+			<input name="searchTitle" type="text" class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary">go</button>
+	</form>
+{% endblock %}

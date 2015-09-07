@@ -1,0 +1,1 @@
+app.directive('message', function () {});

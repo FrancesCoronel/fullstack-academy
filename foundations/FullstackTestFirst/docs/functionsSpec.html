@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>functionsSpec.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>functionsSpec.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Let’s start with some interesting facts about functions.<br>The first thing to be aware of is that inside a function,
+there is a special variable called <code>arguments</code></p>
+<p><code>arguments</code> looks and feels like an array (though be careful, it’s not
+actually an array).  </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"The arguments array"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  it(<span class="hljs-string">"allows you to call a function with arguments like normal"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> result = concat_string(<span class="hljs-string">"David"</span>, <span class="hljs-string">" "</span>, <span class="hljs-string">"Yang"</span>);
+    expect(result).toEqual(<span class="hljs-string">"David Yang"</span>);
+  });
+
+  it(<span class="hljs-string">"allows you to call a function with as many arguments as you want"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> result = concat_string(<span class="hljs-string">"This"</span>, <span class="hljs-string">" "</span>, <span class="hljs-string">"should"</span>, <span class="hljs-string">" "</span>, <span class="hljs-string">"be done with join"</span>);
+    expect(result).toEqual(<span class="hljs-string">"This should be done with join"</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This will explore the idea that JS’ functions are just values that can be passed aroudn.
+For example, here we can have a function that creates another function.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"higher-order functions"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  it(<span class="hljs-string">'means that a function can take a function as an argument'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> callThisFunction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Called Value"</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Create a function that runs functions and returns their “return” value</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    expect(yourFunctionRunner(callThisFunction)).toEqual(<span class="hljs-string">"Called Value"</span>);
+
+    <span class="hljs-keyword">var</span> andThisFunction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">" and Other Value"</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><code>yourFunctionRunner</code> should run as many functions as it gets and concatenate their return values
+You should try to use the <code>arguments</code> array here.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    expect(yourFunctionRunner(callThisFunction, andThisFunction)).toEqual(<span class="hljs-string">"Called Value and Other Value"</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Now we’ll explore the idea of closure
+Closures describe functions that remember variables that were in scope
+when they were defined (defined being the operative word).</p>
+<p>Then, even if the scope that the function was defined in goes away, it continues to have access 
+to have scope.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"makeAdder"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  it(<span class="hljs-string">"takes an argument A and returns a function that adds A to any value it's passed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> adderOf2function = makeAdder(<span class="hljs-number">2</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Now let’s call the function that we got back and add 5 to the closed-over value</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    expect(adderOf2function(<span class="hljs-number">5</span>)).toEqual(<span class="hljs-number">7</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Functions that decorate other functions.  These functions return a version of the function
+with some changed behavior.  This will depend on closure since the function needs to
+remember information that in a scope that will eventually go away.</p>
+<p>Given a function, return a new function will only run once, no matter how many times it’s called</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"once"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  it(<span class="hljs-string">"should only increment num one time"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> num = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> increment = once(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      num++;
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>run this function twice, but since it’s a new function that’s been modified by “once”
+it will only run once and num won’t be incremented again.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    increment();
+    increment();
+
+    expect(num).toEqual(<span class="hljs-number">1</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Closures are a bit stranger than you’d expect.  Here let’s create
+an object that has two functions.  These functions can share a piece of information
+(that’s not in the object itself).</p>
+<p>What’s interesting about closure is that both of these functions have closed over 
+the same value and can both read and modify it.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Shared contexts"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  it(<span class="hljs-string">"should return an object with two functions"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> sharedObj = createObjectWithTwoClosures();
+    expect(<span class="hljs-keyword">typeof</span> sharedObj.oneIncrementer).toBe(<span class="hljs-string">"function"</span>);
+    expect(<span class="hljs-keyword">typeof</span> sharedObj.tensIncrementer).toBe(<span class="hljs-string">"function"</span>);
+    expect(<span class="hljs-keyword">typeof</span> sharedObj.getValue).toBe(<span class="hljs-string">"function"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Here we’re testing that you’re not storing anything
+besides these three functions.  The value that will 
+be incremented/decremented (and returned by getValue)
+should be only in scope during the createObjectWithTwoClosures function call and then
+closed over by the three functions returned in the object</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    expect(<span class="hljs-built_in">Object</span>.keys(sharedObj).length).toBe(<span class="hljs-number">3</span>);
+  });
+
+
+  it(<span class="hljs-string">'should let two functions call the same value'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> sharedObj = createObjectWithTwoClosures();
+    sharedObj.oneIncrementer();
+    sharedObj.tensIncrementer();
+    expect(sharedObj.getValue()).toEqual(<span class="hljs-number">11</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

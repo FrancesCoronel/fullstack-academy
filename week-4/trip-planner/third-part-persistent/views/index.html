@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block title %}Your Trip{% endblock %}
+
+{% block content %}
+<div id="app" class="clearfix">
+	<div class="map-container col-sm-8 col-lg-9">
+		<div>
+			<div id="map-canvas"></div>
+		</div>
+	</div>
+	<div id="control-panel" class="col-sm-4 col-lg-3 clearfix">
+		<div class="col-xs-6 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div id="all-hotels">
+						<h4>Hotels</h4>
+						<select></select>
+						<button class="btn btn-primary btn-circle pull-right add">+</button>
+					</div>
+					<div id="all-restaurants">
+						<h4>Restaurants</h4>
+						<select></select>
+						<button class="btn btn-primary btn-circle pull-right add">+</button>
+					</div>
+					<div id="all-things-to-do">
+						<h4>Things To Do</h4>
+						<select></select>
+						<button class="btn btn-primary btn-circle pull-right add">+</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-12">
+			<h3>
+				<span id="day-title">
+					<span>Day 1</span>
+					<button class="btn btn-xs btn-danger remove btn-circle">x</button>
+				</span>
+			</h3>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="day-buttons"></span>
+					<button id="add-day" class="btn btn-circle day-btn">+</button>
+				</div>
+				<div class="panel-body">
+					<div id="my-hotel">
+						<h4>My Hotel</h4>
+						<ul class="list-group"></ul>
+					</div>
+					<div id="my-restaurants">
+						<h4>My Restaurants</h4>
+						<ul class="list-group"></ul>
+					</div>
+					<div id="my-things-to-do">
+						<h4>My Things To Do</h4>
+						<ul class="list-group"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

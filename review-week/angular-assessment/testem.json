@@ -1,0 +1,18 @@
+{
+	"framework": "mocha+chai",
+	"src_files": [
+		"bower_components/jquery/dist/jquery.min.js",
+		"bower_components/bootstrap/dist/js/bootstrap.min.js",
+		"bower_components/angular/angular.min.js",
+		"bower_components/angular-ui-router/release/angular-ui-router.min.js",
+		"bower_components/angular-mocks/angular-mocks.js",
+		"node_modules/chai-spies/chai-spies.js",
+		"browser/app/todos/todo.factory.spec.js",
+		"browser/app/todos/list/todo.list.spec.js",
+		"browser/app/todos/item/todo.item.spec.js",
+		"browser/app/todos/detail/todo.detail.spec.js",
+		"browser/app/todos/edit/todo.edit.spec.js",
+		"browser/utils/ng-enter.spec.js",
+		"browser/**/!(*.spec|*.solution).js"
+	]
+}

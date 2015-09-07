@@ -1,0 +1,31 @@
+<div class="todo-container">
+	<div>
+		<ul class="nav nav-tabs">
+			<li role="presentation" ng-class="{active: isActiveCategory('all')}">
+				<a ng-click="setCategory('all')" href="">All</a>
+			</li>
+			<li role="presentation" ng-class="{active: isActiveCategory('active')}">
+				<a ng-click="setCategory('active')" href="">Active</a>
+			</li>
+			<li role="presentation" ng-class="{active: isActiveCategory('completed')}">
+				<a ng-click="setCategory('completed')" href="">Completed</a>
+			</li>
+		</ul>
+		<div class="todo-list">
+			<todo-item ng-repeat="todo in todos | filter: {complete: filterByCompleted}" the-todo="todo"></todo-item>
+			<div class="todo-item">
+				<div class="input-group">
+					<input ng-model="toAdd.title" type="text" class="form-control" />
+					<span class="input-group-btn">
+						<button class="btn btn-primary" ng-click="addTodo()">
+							<span>add todo</span>
+						</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="full-width">
+		<ui-view></ui-view>
+	</div>
+</div>

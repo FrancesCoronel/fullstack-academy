@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>calculatorSpec.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>calculatorSpec.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>In this exercise we’re going to create a calculator object
+that can perform certain basic mathematic operations.</p>
+<p>We’ll be using a pattern called the factory pattern where
+our function creates an object tailored to our needs.  This function
+is just like the one we built in <em>01_properties</em>, except now we’re
+creating some useful functions add</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Create a Calculator"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> calculator;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Here we’re just calling the <code>createCalculator</code> function, it returns
+a calculator object.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator = createCalculator();
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>When we call <code>value()</code>, it returns us 0 at the start.  We haven’t run any math functions
+yet.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  it(<span class="hljs-string">"initially has 0"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    expect(calculator.value()).toEqual(<span class="hljs-number">0</span>);
+  });
+
+  it(<span class="hljs-string">"can add a number"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator.add(<span class="hljs-number">2</span>);
+    expect(calculator.value()).toEqual(<span class="hljs-number">2</span>);
+  });
+
+  it(<span class="hljs-string">"can add two numbers"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator.add(<span class="hljs-number">2</span>);
+    calculator.add(<span class="hljs-number">3</span>);
+    expect(calculator.value()).toEqual(<span class="hljs-number">5</span>);
+  });
+
+  it(<span class="hljs-string">"can add many numbers"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator.add(<span class="hljs-number">2</span>);
+    calculator.add(<span class="hljs-number">3</span>);
+    calculator.add(<span class="hljs-number">4</span>);
+    expect(calculator.value()).toEqual(<span class="hljs-number">9</span>);
+  });
+
+  it(<span class="hljs-string">"can subtract a number"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator.subtract(<span class="hljs-number">2</span>);
+    expect(calculator.value()).toEqual(-<span class="hljs-number">2</span>);
+  });
+
+  it(<span class="hljs-string">"can add and subtract"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    calculator.add(<span class="hljs-number">3</span>);
+    calculator.subtract(<span class="hljs-number">2</span>);
+    expect(calculator.value()).toEqual(<span class="hljs-number">1</span>);
+  });
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

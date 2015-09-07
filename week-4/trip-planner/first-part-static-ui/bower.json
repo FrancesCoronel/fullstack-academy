@@ -1,0 +1,27 @@
+{
+  "name": "trip-planner",
+  "version": "0.0.0",
+  "authors": [
+    "FVCproductions & Peter Steele"
+  ],
+  "description": "A trip planner utilizing bower components.",
+  "keywords": [
+    "trip",
+    "plan",
+    "trip",
+    "planner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "flat-ui": "~2.2.2"
+  }
+}

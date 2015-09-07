@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}wikistack - edit{% endblock %}
+
+{% block content %}
+	<h3>EDIT</h3>
+	<hr>
+	<form method="POST" action="/wiki/{{ url_name }}/edit">
+		<div class="form-group">
+			<label for="title">page title</label>
+			<input name="title" type="text" class="form-control" value="{{ title }}" />
+		</div>
+		<div class="form-group">
+			<label for="content">page content</label>
+			<textarea name="body" class="form-control" rows="12">{{ body }}</textarea>
+		</div>
+		<div class="form-group">
+			<label for="content">Tags</label>
+			<input name="tags" class="form-control" value="{{ tags }}">
+		</div>
+		<button type="submit" class="btn btn-primary">submit edits</button>
+		<a href="../{{ url_name }}" class="btn btn-danger">cancel</a>
+	</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}wikistack - add{% endblock %}
+
+{% block content %}
+	<h3>ADD A PAGE</h3>
+	<hr>
+	<form method="POST" action="add/submit">
+		<div class="form-group">
+			<label for="title">page title</label>
+			<input name="title" type="text" class="form-control"/>
+		</div>
+		<div class="form-group">
+			<label for="content">page content</label>
+			<textarea name="body" class="form-control" rows="12"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<input name="tags" class="form-control" placeholder="sparate by comma">
+		</div>
+
+		<button type="submit" class="btn btn-primary">submit</button>
+	</form>
+{% endblock %}

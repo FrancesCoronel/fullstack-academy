@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}wikistack - {{ title }}{% endblock %}
+
+{% block content %}
+	<h3>{{ title }}<small> (<a href="{{ url_name }}/similar">Similar</a>)</small></h3>
+	{% for tag in tags %}
+	<a href="/wiki/tags/{{ tag }}">{{ tag }}</a> |
+	{% endfor %}
+	<hr>
+	<div class="page-body">{{ body | marked }}</div>
+	<a href="{{ url_name }}/edit" class="btn btn-primary">edit this page</a>
+	<a href="{{ url_name }}/delete" class="btn btn-danger">delete this page</a>
+{% endblock %}

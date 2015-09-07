@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>propertiesSpec.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>propertiesSpec.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Properties on Object Literal"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> object;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>beforeEach is a Jasmine helper that runs 
+the code inside the passed function before each test below
+It’s helpful for not having to repeat yourself constantly
+in your test specs</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>for each test, create a new empty object</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    object = {};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>then run the setPropertiesOnObjLiteral function that you’ve written in properties.js</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    setPropertiesOnObjLiteral(object);
+  });
+
+  describe(<span class="hljs-string">"setPropertiesOnObjLiteral"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"sets x to 7"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(object.x).toEqual(<span class="hljs-number">7</span>);
+    });
+
+    it(<span class="hljs-string">"sets y to 8 (and we can use a string to access it)"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(object[<span class="hljs-string">'y'</span>]).toEqual(<span class="hljs-number">8</span>);
+    });
+
+    it(<span class="hljs-string">"sets the property 'onePlus' to a function that adds one to its parameter"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(object.onePlus(<span class="hljs-number">4</span>)).toEqual(<span class="hljs-number">5</span>);
+      expect(object[<span class="hljs-string">'onePlus'</span>](<span class="hljs-number">123</span>)).toEqual(<span class="hljs-number">124</span>);
+    });
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Now let’s explore the idea of using Arrays instead of Objects.
+One of the coolest things about JavaScript is that Arrays are just 
+a specific type of Object that has more features.  Everything that you can do
+with objects, you can also do with arrays.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Properties on an Array Object"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> arrayObject;
+
+  beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    arrayObject = [];
+    setPropertiesOnArrayObj(arrayObject);
+  });
+
+  describe(<span class="hljs-string">"setPropertiesOnArrayObj"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"sets the property `hello` to a function that returns the string `Hello!`"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(arrayObject.hello()).toEqual(<span class="hljs-string">"Hello!"</span>);
+    });
+
+    it(<span class="hljs-string">"sets the property `full` to stack (and we can use a string to access it)"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(arrayObject[<span class="hljs-string">'full'</span>]).toEqual(<span class="hljs-string">"stack"</span>);
+    });
+
+    it(<span class="hljs-string">"accesses the zeroth index value in the array"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(arrayObject[<span class="hljs-number">0</span>]).toEqual(<span class="hljs-number">5</span>);
+    });
+
+    it(<span class="hljs-string">"sets the property 'twoTimes' to a function that multiplies its parameter by 1"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(arrayObject.twoTimes(<span class="hljs-number">4</span>)).toEqual(<span class="hljs-number">8</span>);
+      expect(arrayObject[<span class="hljs-string">'twoTimes'</span>](<span class="hljs-number">123</span>)).toEqual(<span class="hljs-number">246</span>);
+    });
+
+  });
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>It’s the same with functions, they’re also Objects.</p>
+<p>This is an idea that we’ll explore a lot more when we get to inheritance in the
+Mammals exercise.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">"Properties on a Function Object"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> functionObject;
+
+  beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    functionObject = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"I am a function object, all functions are objects! Function can have their own properties too!"</span>;
+    };
+    setPropertiesOnFunctionObj(functionObject);
+  });
+
+  describe(<span class="hljs-string">"`functionObject` function"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"returns the proper string the `functionObject` function returns declared in the beforeEach Function above"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(functionObject()).toEqual(<span class="hljs-string">"I am a function object, all functions are objects! Function can have their own properties too!"</span>);
+    });
+  });
+
+  describe(<span class="hljs-string">"setPropertiesOnFunctionObj"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    it(<span class="hljs-string">"sets year to 2015"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(functionObject.year).toEqual(<span class="hljs-number">2015</span>);
+    });
+
+    it(<span class="hljs-string">"sets `divideByTwo` to a function that accepts a number and returns the value divided by two "</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(functionObject.divideByTwo(<span class="hljs-number">6</span>)).toEqual(<span class="hljs-number">3</span>);
+    })</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Whenever you define a function in JavaScript, that “function object” also has a built-in property
+similar to <code>Array.length</code>.  This property is called <code>prototype</code> and it has some special behavior
+when used in conjunction with the <code>new</code> keyword.  We’ll cover this later in <em>Mammals</em></p>
+<p>However, just like any other object, we can do whatever we want to this <code>prototype</code> object </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    it(<span class="hljs-string">"adds a property to the existing prototype object only on Function Objects"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      expect(functionObject.prototype.helloWorld()).toEqual(<span class="hljs-string">"Hello World"</span>);
+    });
+  });
+
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+    @for $n from 1 through 12 {
+        .col-sm-#{$n}
+        {
+            float: left;
+            padding: 0 2%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 70%;
+    }
+    @for $n from 1 through 12 {
+        .col-md-#{$n}
+        {
+            float: left;
+            padding: 0 2%;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 80%;
+    }
+    @for $n from 1 through 12 {
+        .col-lg-#{$n}
+        {
+            float: left;
+            padding: 0 2%;
+            width: 100%;
+        }
+    }
+}
+
+// $screen-sm-min: 768px;
+// $screen-md-min: 992px;
+// $screen-lg-min: 1200px;
+// $grid-cols: 12;
+// $gutter-width: 2.5%;
+
+// @media (max-width: $screen-sm-min) {
+//   @for $i from 1 through 12 {
+//     .col-sm-#{$i} {
+//       color: #000;
+//       width: 100%;
+//       float: left;
+//     }
+//   }
+// }
+
+// @media (max-width: $screen-md-min) {
+//   @for $i from 1 through 11 {
+//     .col-md-#{$i} {
+//       color: #000;
+//       width: 50%

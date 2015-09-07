@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+  <ul class="nav nav-tabs" id="filetabs">
+    <% files.forEach(function(fileObj) { %>
+      <li><a id="<%= fileObj.id %>-link" href="#<%= fileObj.id %>"><%= fileObj.filename %></a></li>
+    <% }) %>
+  </ul>
+
+  <div class="tab-content">
+
+  <% files.forEach(function(fileObj) { %>
+    <div class="tab-pane" id="<%= fileObj.id %>">
+      <pre>
+<%= fileObj.data %>
+      </pre>
+    </div>
+  <% }) %>
+  </div >
+
+
+<script type="text/javascript">
+$('.nav-tabs a').click(function (e) {
+    $(this).tab('show');
+    window.scrollTo(0,0);
+});
+$(document).ready(function() {
+  if(window.location.hash) {
+    $("a" + window.location.hash + "-link").tab('show');
+  } else {
+    $(".nav-tabs a").first().tab('show');
+
+  }
+});
+</script>
+</html>

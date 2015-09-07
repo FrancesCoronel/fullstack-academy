@@ -1,0 +1,32 @@
+{
+  "name": "final-assessment",
+  "version": "1.0.0",
+  "author": "Fullstack Instructors",
+  "scripts": {
+    "test": "mocha ./tests/server",
+    "browser-test": "karma start ./tests/browser/karma.conf.js"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.3",
+    "bluebird": "^2.9.34",
+    "chai": "^3.2.0",
+    "jquery": "^2.1.4",
+    "karma": "^0.13.8",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.2.5",
+    "phantomjs": "^1.9.17",
+    "sinon": "^1.15.4",
+    "superagent": "^1.3.0",
+    "supertest": "^1.0.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.3",
+    "angular-ui-router": "^0.2.15",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.1"
+  }
+}

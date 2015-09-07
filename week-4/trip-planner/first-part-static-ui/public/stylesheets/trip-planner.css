@@ -1,0 +1,34 @@
+div#footer {
+  margin-top: 1%;
+  background-color: gainsboro;
+  text-align: center;
+  padding-top: 1%; }
+
+.navbar {
+  border-radius: 0px; }
+
+select {
+  max-width: 90%; }
+
+@media (min-width: 1400px) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 80%; }
+  text-align: center; }
+
+.fa {
+  padding-right: .5em; }
+
+i.fa.fa-heart {
+  padding-right: 0em; }
+
+#map-container {
+  position: fixed;
+  width: inherit; }
+
+#map-canvas {
+  height: calc(100vh - 50px); }
+
+li {
+  list-style-type: none; }
