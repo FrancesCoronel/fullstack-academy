@@ -4,11 +4,11 @@
 
 ------
 
-### [x] TestFirst 5 | [GitHub Repo](https://github.com/fvcproductions/FullstackTestFirst)
+### [x] TestFirst 5 | [GitHub Repo](https://github.com/FrancesCoronel/FullstackTestFirst)
 
 - [x] 05 Functions
 
-### [x] Guessing Game Part 2 - Finished |  [GitHub Repo](https://github.com/fvcproductions/FullstackTestFirst)
+### [x] Guessing Game Part 2 - Finished |  [GitHub Repo](https://github.com/FrancesCoronel/FullstackTestFirst)
 
 ------
 

@@ -4,15 +4,15 @@
 
 ------
 
-### [x] TestFirst 6-8 | [GitHub Repo - FullstackTestFirst](https://github.com/fvcproductions/FullstackTestFirst)
+### [x] TestFirst 6-8 | [GitHub Repo - FullstackTestFirst](https://github.com/FrancesCoronel/FullstackTestFirst)
 
 - [x] 06 Functional
 - [x] 07 Mammals
 - [x] 08 Recursion
 
-### [x] Node.js Treehouse Project | [GitHub Repo - Projects/Treehouse/Node.js-Basics](https://github.com/fvcproductions/Projects/tree/master/Treehouse/Node.js-Basics)
+### [x] Node.js Treehouse Project | [GitHub Repo - Projects/Treehouse/Node.js-Basics](https://github.com/FrancesCoronel/Projects/tree/master/Treehouse/Node.js-Basics)
 
-### [x] NodeSchool Exercises | [GitHub Repo - Projects/LearnYouNode](https://github.com/fvcproductions/Projects/tree/master/LearnYouNode)
+### [x] NodeSchool Exercises | [GitHub Repo - Projects/LearnYouNode](https://github.com/FrancesCoronel/Projects/tree/master/LearnYouNode)
 
 - [x] Hello World
 - [x] Baby Steps

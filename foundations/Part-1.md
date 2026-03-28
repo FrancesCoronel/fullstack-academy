@@ -4,7 +4,7 @@
 
 ---
 
-### [x] TestFirst 0-4 | [GitHub Repo](https://github.com/fvcproductions/FullstackTestFirst)
+### [x] TestFirst 0-4 | [GitHub Repo](https://github.com/FrancesCoronel/FullstackTestFirst)
 
 - [x] 00 Hello
 - [x] 01 Properties
@@ -18,7 +18,7 @@
 >
 > Decided to get inspiration from [Quora](http://quora.com). The [question](https://www.quora.com/What-influenced-and-inspired-you-to-learn-how-to-code) now has 30+ answers and 13K+ views! :-) 
 
-### [x] Guessing Game Part 1 - CSS/HTML |  [GitHub Repo](https://github.com/fvcproductions/FullstackTestFirst)
+### [x] Guessing Game Part 1 - CSS/HTML |  [GitHub Repo](https://github.com/FrancesCoronel/FullstackTestFirst)
 
 - [x] 2 to 4 Buttons
 - [x] 1 Input Field
